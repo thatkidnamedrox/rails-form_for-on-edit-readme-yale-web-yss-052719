@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 	def update
 		puts params
 	  @post = Post.find(params[:id])
-	  @post.update(params["post"])
+	  @post.update(title: params["post"][:title])
 	  redirect_to post_path(@post)
 	end
 end
